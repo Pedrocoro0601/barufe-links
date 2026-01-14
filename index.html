@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barufé | Links Oficiais</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F9F9F3',
+                        coffee: '#4E342E',
+                        olive: '#556B2F',
+                        'olive-dark': '#3e4f22',
+                        whatsapp: '#25D366',
+                        shopee: '#EE4D2D',
+                        mercadolivre: '#FFE600',
+                    },
+                    fontFamily: {
+                        logo: ['Kaushan Script', 'cursive'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --cream: #F9F9F3;
+            --coffee: #4E342E;
+            --olive: #556B2F;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--coffee);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Fundo Temático Suave */
+        .baru-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 20c-10 0-18 15-18 30s8 30 18 30 18-15 18-30-8-30-18-30z' fill='%23556B2F' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        /* Faixas Cruzadas - Otimizadas para Looping Infinito e Velocidade PC */
+        .ticker-container {
+            position: relative;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            z-index: 10;
+            overflow: visible;
+        }
+
+        .ticker-band {
+            width: 100%;
+            padding: 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: flex;
+        }
+
+        .band-left {
+            background-color: var(--olive);
+            color: white;
+            transform: rotate(-2.5deg) scale(1.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .band-right {
+            background-color: var(--coffee);
+            color: var(--cream);
+            transform: rotate(2.5deg) scale(1.1);
+            margin-top: -15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .ticker-content {
+            display: flex;
+            white-space: nowrap;
+            will-change: transform;
+        }
+
+        /* Velocidade rápida (7s) para dinamismo no PC */
+        .animate-left { animation: tickerLeft 7s linear infinite; }
+        .animate-right { animation: tickerRight 7s linear infinite; }
+
+        @keyframes tickerLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes tickerRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- HOVER EFFECTS PROFISSIONAIS --- */
+
+        .btn-link {
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(78, 52, 46, 0.05);
+            z-index: 1;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px -10px rgba(78, 52, 46, 0.15);
+        }
+
+        .btn-link:active {
+            transform: scale(0.98);
+        }
+
+        /* Hover WhatsApp: Pulse e Glow Verde */
+        .btn-wpp:hover {
+            border-color: rgba(37, 211, 102, 0.3);
+            background: #fdfdfd;
+        }
+        .btn-wpp:hover .icon-box {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+        }
+        .btn-wpp:hover .btn-text-main { color: #25D366; }
+
+        /* Hover Shopee: Pop de Cor e Agitação do Ícone */
+        .btn-shopee:hover {
+            border-color: rgba(238, 77, 45, 0.3);
+        }
+        .btn-shopee:hover .icon-box {
+            background: #EE4D2D;
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 15px rgba(238, 77, 45, 0.4);
+        }
+        .btn-shopee:hover .btn-text-main { color: #EE4D2D; }
+
+        /* Hover Mercado Livre: Caminhão Passando e Glow Amarelo */
+        .btn-ml:hover {
+            border-color: rgba(255, 230, 0, 0.5);
+        }
+        .btn-ml .truck-icon {
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+            color: #FFE600;
+        }
+        .btn-ml:hover .truck-icon {
+            left: 110%;
+            opacity: 1;
+        }
+        .btn-ml:hover .icon-box {
+            background: #FFE600;
+            color: #4E342E;
+            box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+        }
+
+        /* Hover Site: Preenchimento de Onda Orgânica */
+        .btn-site .wave-fill {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--olive);
+            z-index: -1;
+            transition: bottom 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            border-radius: 50% 50% 0 0;
+            transform: scale(1.5);
+        }
+        .btn-site:hover .wave-fill {
+            bottom: 0;
+            border-radius: 0;
+            transform: scale(1);
+        }
+        .btn-site:hover .icon-box {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        .btn-site:hover .btn-text-main, .btn-site:hover .btn-text-sub, .btn-site:hover .arrow {
+            color: white !important;
+        }
+
+        /* Outros estilos auxiliares */
+        .icon-box {
+            transition: all 0.4s ease;
+        }
+        .btn-text-main { transition: color 0.3s ease; font-weight: 700; }
+        .btn-text-sub { transition: color 0.3s ease; }
+
+        .cascade-item { opacity: 0; transform: translateY(20px); }
+        .fade-in { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="baru-bg font-sans min-h-screen flex flex-col items-center">
+
+    <main class="w-full flex flex-col items-center py-12">
+        
+        <!-- Header -->
+        <header class="text-center px-6 mb-4 cascade-item">
+            <div class="relative inline-block mb-4">
+                <div class="w-28 h-28 rounded-full border-[3px] border-olive p-1 bg-white shadow-2xl mx-auto overflow-hidden">
+                    <img src="logo1.png" alt="Barufé" class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+            <h1 class="font-logo text-5xl text-coffee">Barufé</h1>
+            <p class="font-serif italic text-coffee/70 text-lg mt-2 leading-tight">O sabor autêntico do Cerrado Mineiro</p>
+        </header>
+
+        <!-- Faixas Cruzadas (Carrossel) -->
+        <div class="ticker-container mb-12 py-10">
+            <!-- Faixa Olive (Esquerda) -->
+            <div class="ticker-band band-left">
+                <div class="ticker-content animate-left">
+                    <span>100% VEGANO • PROCESSO ARTESANAL • DIRETO DO PRODUTOR • ÔMEGA 6 E 9 • ANTIOXIDANTES • PROTEÍNA PURA •&nbsp;</span>
+                    <span>100% VEGANO • PROCESSO ARTESANAL • DIRETO DO PRODUTOR • ÔMEGA 6 E 9 • ANTIOXIDANTES • PROTEÍNA PURA •&nbsp;</span>
+                </div>
+            </div>
+            <!-- Faixa Coffee (Direita) -->
+            <div class="ticker-band band-right">
+                <div class="ticker-content animate-right">
+                    <span>SELECIONADAS À MÃO • TRADIÇÃO MINEIRA • CROCANTES • NUTRITIVAS • VÁCUO • SEM CONSERVANTES •&nbsp;</span>
+                    <span>SELECIONADAS À MÃO • TRADIÇÃO MINEIRA • CROCANTES • NUTRITIVAS • VÁCUO • SEM CONSERVANTES •&nbsp;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links Oficiais -->
+        <section class="w-full max-w-[360px] px-6 space-y-5">
+            
+            <!-- WhatsApp -->
+            <button onclick="triggerAction(this, 'wpp', 'https://wa.me/5538998649562')" class="btn-link btn-wpp group w-full flex items-center justify-between p-5 rounded-3xl">
+                <div class="flex items-center space-x-4">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center bg-whatsapp/10 rounded-2xl text-whatsapp">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="btn-text-main block text-coffee">WhatsApp Oficial</span>
+                        <span class="btn-text-sub text-[10px] uppercase font-bold text-coffee/30 tracking-widest">Atendimento Direto</span>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow w-5 h-5 text-coffee/20"></i>
+            </button>
+
+            <!-- Shopee -->
+            <button onclick="triggerAction(this, 'shopee', 'https://shopee.com.br')" class="btn-link btn-shopee group w-full flex items-center justify-between p-5 rounded-3xl">
+                <div class="flex items-center space-x-4">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center bg-shopee/10 rounded-2xl text-shopee">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="btn-text-main block text-coffee">Loja na Shopee</span>
+                        <span class="btn-text-sub text-[10px] uppercase font-bold text-coffee/30 tracking-widest">Ofertas & Frete</span>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow w-5 h-5 text-coffee/20"></i>
+            </button>
+
+            <!-- Mercado Livre -->
+            <button onclick="triggerAction(this, 'ml', 'https://mercadolivre.com.br')" class="btn-link btn-ml group w-full flex items-center justify-between p-5 rounded-3xl">
+                <div class="truck-icon"><i data-lucide="truck" class="w-8 h-8 fill-current"></i></div>
+                <div class="flex items-center space-x-4">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center bg-mercadolivre/20 rounded-2xl text-coffee/70">
+                        <i data-lucide="package" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="btn-text-main block text-coffee">Mercado Livre</span>
+                        <span class="btn-text-sub text-[10px] uppercase font-bold text-coffee/30 tracking-widest">Entrega Mais Rápida</span>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow w-5 h-5 text-coffee/20"></i>
+            </button>
+
+            <!-- Site Oficial -->
+            <button onclick="triggerAction(this, 'site', 'https://barufe.com.br')" class="btn-link btn-site group w-full flex items-center justify-between p-5 rounded-3xl">
+                <div class="wave-fill"></div>
+                <div class="flex items-center space-x-4">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center bg-olive/10 rounded-2xl text-olive">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="btn-text-main block text-coffee">Site Oficial</span>
+                        <span class="btn-text-sub text-[10px] uppercase font-bold text-coffee/30 tracking-widest">Nossa Loja Online</span>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow w-5 h-5 text-coffee/20"></i>
+            </button>
+
+        </section>
+
+        <!-- Minimal Footer -->
+        <div class="mt-20 flex flex-col items-center space-y-6 cascade-item">
+            <div class="flex space-x-8">
+                <a href="#" class="text-coffee/40 hover:text-olive transition-colors transform hover:scale-110">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-coffee/40 hover:text-olive transition-colors transform hover:scale-110">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-coffee">Artesanal • Minas Gerais</p>
+        </div>
+
+    </main>
+
+    <script>
+        // Init Lucide
+        lucide.createIcons();
+
+        // Cascade Intro
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.cascade-item');
+            items.forEach((item, index) => {
+                setTimeout(() => item.classList.add('fade-in'), index * 250);
+            });
+            
+            const buttons = document.querySelectorAll('.btn-link');
+            buttons.forEach((b, i) => {
+                setTimeout(() => b.classList.add('fade-in'), (i + 2) * 150);
+            });
+        });
+
+        // Unique Thematic Animations for Click
+        function triggerAction(btn, type, url) {
+            // Efeito de clique rápido
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = '';
+                window.open(url, '_blank');
+            }, 150);
+        }
+    </script>
+</body>
+</html>
